@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
-  var itemIndex = 2.obs;
+  var itemIndex = 0.obs;
   var langIndex = 0.obs;
 
   void setItem(int value) => itemIndex.value = value;
