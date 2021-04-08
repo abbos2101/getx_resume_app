@@ -257,7 +257,10 @@ class ProjectPage extends StatelessWidget {
                 height: 70,
                 padding: EdgeInsets.all(0),
                 shape: CircleBorder(),
-                onPressed: () {},
+                onPressed: () {
+                  launch(
+                      "https://github.com/abbos2101/getx_resume_app/blob/master/assets/flower(0.3.2).apk?raw=true");
+                },
                 child: Icon(
                   FontAwesomeIcons.download,
                   color: MyColors.blue,
@@ -296,7 +299,11 @@ class ProjectPage extends StatelessWidget {
                 height: 70,
                 padding: EdgeInsets.all(0),
                 shape: CircleBorder(),
-                onPressed: () {},
+                onPressed: () {
+                  launch(
+                    "https://github.com/abbos2101/getx_resume_app/blob/master/assets/mano(0.6.6).apk?raw=true",
+                  );
+                },
                 child: Icon(
                   FontAwesomeIcons.download,
                   color: MyColors.blue,
