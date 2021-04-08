@@ -37,6 +37,7 @@ class MainPage extends StatelessWidget {
               onPressedUz: () => c.setLang(0),
               onPressedRu: () => c.setLang(1),
               onPressedEn: () => c.setLang(2),
+              fullscreen: false,
             ),
             Expanded(child: _body()),
           ],

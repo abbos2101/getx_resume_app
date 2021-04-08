@@ -27,13 +27,14 @@ class AboutPage extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           alignment: Alignment.center,
-          child: SizedBox(
-            width: Get.width > 800 ? Get.width * 0.6 : Get.width * 0.96,
-            height: Get.height * 0.7,
-            child: Row(children: [_bodyLeft(), _bodyRight()]),
+          child: SingleChildScrollView(
+            child: SizedBox(
+              width: Get.width > 800 ? Get.width * 0.6 : Get.width * 0.96,
+              height: Get.height * 0.7,
+              child: Row(children: [_bodyLeft(), _bodyRight()]),
+            ),
           ),
         ),
-        Text("Salom ${Get.width}"),
       ],
     );
   }
@@ -178,31 +179,33 @@ class AboutPage extends StatelessWidget {
             ),
           ],
         ),
-        child: Obx(() => Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(height: 20),
-                Text(
-                  AboutModel.title(main.langIndex.value),
-                  style: MyStyle.bold.copyWith(fontSize: 22),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  """
-       ${AboutModel.description(main.langIndex.value)}                                                
-              """,
-                  style: MyStyle.bold.copyWith(fontSize: 18),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    """
-  ${AboutModel.content(main.langIndex.value)}
-                 """,
-                    style: MyStyle.aref.copyWith(fontSize: 16),
+        child: Obx(() => SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: 20),
+                  Text(
+                    AboutModel.title(main.langIndex.value),
+                    style: MyStyle.bold.copyWith(fontSize: 22),
                   ),
-                ),
-              ],
+                  SizedBox(height: 20),
+                  Text(
+                    """
+       ${AboutModel.description(main.langIndex.value)}                                                
+                """,
+                    style: MyStyle.bold.copyWith(fontSize: 18),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      """
+  ${AboutModel.content(main.langIndex.value)}
+                   """,
+                      style: MyStyle.aref.copyWith(fontSize: 16),
+                    ),
+                  ),
+                ],
+              ),
             )),
       ),
     );
