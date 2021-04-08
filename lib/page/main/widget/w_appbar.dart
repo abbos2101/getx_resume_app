@@ -59,7 +59,7 @@ class WAppBarChild extends StatelessWidget {
               ),
             ],
           ),
-          Divider(),
+          Divider(thickness: 2, color: MyColors.greyDark),
           Row(
             children: [
               SizedBox(width: 10),
@@ -87,12 +87,11 @@ class WAppBarChild extends StatelessWidget {
                 hoverColor: MyColors.greyLight,
                 child: Text(titleProject),
               ),
-              Container(
-                height: 50,
-                width: 2,
-                color: MyColors.grey,
-                margin: EdgeInsets.only(left: 10, right: 10),
-              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(child: SizedBox()),
               MaterialButton(
                 minWidth: 40,
                 padding: EdgeInsets.all(0),
@@ -117,6 +116,7 @@ class WAppBarChild extends StatelessWidget {
                 hoverColor: MyColors.greyLight,
                 child: Text("En"),
               ),
+              SizedBox(width: 10),
             ],
           ),
         ],

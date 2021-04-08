@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:getx_resume_app/data/colors.dart';
 import 'package:getx_resume_app/data/style.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 import 'project_controller.dart';
 
@@ -125,7 +126,11 @@ class ProjectPage extends StatelessWidget {
                 height: 70,
                 padding: EdgeInsets.all(0),
                 shape: CircleBorder(),
-                onPressed: () {},
+                onPressed: () {
+                  launch(
+                    "https://play.google.com/store/apps/details?id=uz.greenwhite.smartup5_trade",
+                  );
+                },
                 child: Icon(
                   FontAwesomeIcons.googlePlay,
                   color: MyColors.blue,
@@ -200,7 +205,11 @@ class ProjectPage extends StatelessWidget {
                 height: 70,
                 padding: EdgeInsets.all(0),
                 shape: CircleBorder(),
-                onPressed: () {},
+                onPressed: () {
+                  launch(
+                    "https://play.google.com/store/apps/details?id=net.city.qurulishinspektor",
+                  );
+                },
                 child: Icon(
                   FontAwesomeIcons.googlePlay,
                   color: MyColors.blue,
