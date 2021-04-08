@@ -28,11 +28,12 @@ class AboutPage extends StatelessWidget {
           height: double.infinity,
           alignment: Alignment.center,
           child: SizedBox(
-            width: Get.width * 0.6,
-            height: Get.height * 0.6,
+            width: Get.width > 800 ? Get.width * 0.6 : Get.width * 0.96,
+            height: Get.height * 0.7,
             child: Row(children: [_bodyLeft(), _bodyRight()]),
           ),
         ),
+        Text("Salom ${Get.width}"),
       ],
     );
   }

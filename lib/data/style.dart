@@ -10,5 +10,5 @@ class MyStyle {
   );
   static final TextStyle sans = GoogleFonts.raleway();
 
-  static final TextStyle aref = GoogleFonts.arefRuqaa();
+  static final TextStyle aref = GoogleFonts.arefRuqaa(color: Colors.black);
 }

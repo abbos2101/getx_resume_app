@@ -4,6 +4,9 @@ import 'package:getx_resume_app/data/colors.dart';
 class WAppBarChild extends StatelessWidget {
   final int itemIndex;
   final int langIndex;
+  final String titleAbout;
+  final String titleResume;
+  final String titleProject;
   final VoidCallback? onPressedAbout;
   final VoidCallback? onPressedResume;
   final VoidCallback? onPressedProject;
@@ -14,6 +17,9 @@ class WAppBarChild extends StatelessWidget {
   WAppBarChild({
     this.itemIndex = 0,
     this.langIndex = 0,
+    this.titleAbout = "About me",
+    this.titleResume = "Resume",
+    this.titleProject = "Project",
     this.onPressedAbout,
     this.onPressedResume,
     this.onPressedProject,
@@ -44,21 +50,21 @@ class WAppBarChild extends StatelessWidget {
           onPressed: onPressedAbout,
           textColor: itemIndex == 0 ? MyColors.blue : MyColors.black,
           hoverColor: MyColors.greyLight,
-          child: Text("Men haqimda"),
+          child: Text(titleAbout),
         ),
         MaterialButton(
           padding: EdgeInsets.all(20),
           onPressed: onPressedResume,
           textColor: itemIndex == 1 ? MyColors.blue : MyColors.black,
           hoverColor: MyColors.greyLight,
-          child: Text("Resume"),
+          child: Text(titleResume),
         ),
         MaterialButton(
           padding: EdgeInsets.all(20),
           onPressed: onPressedProject,
           textColor: itemIndex == 2 ? MyColors.blue : MyColors.black,
           hoverColor: MyColors.greyLight,
-          child: Text("Proyekt"),
+          child: Text(titleProject),
         ),
         Container(
           height: 50,
