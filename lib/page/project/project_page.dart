@@ -20,18 +20,19 @@ class ProjectPage extends StatelessWidget {
   }
 
   Widget _body() {
-    return Center(
+    return SingleChildScrollView(
       child: Container(
-        width: 700,
-        height: double.infinity,
-        padding: EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
-        child: SingleChildScrollView(
+        width: double.infinity,
+        alignment: Alignment.topCenter,
+        child: SizedBox(
+          width: 700,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _widgetTitle("Native Android"),
               _widgetAndroid(),
               _widgetTitle("Flutter"),
+              _widgetFlutter(),
             ],
           ),
         ),
@@ -120,10 +121,14 @@ class ProjectPage extends StatelessWidget {
             children: [
               Expanded(child: SizedBox()),
               MaterialButton(
+                minWidth: 70,
+                height: 70,
+                padding: EdgeInsets.all(0),
+                shape: CircleBorder(),
                 onPressed: () {},
-                child: Text(
-                  "Play market",
-                  style: MyStyle.bold.copyWith(color: MyColors.blue),
+                child: Icon(
+                  FontAwesomeIcons.googlePlay,
+                  color: MyColors.blue,
                 ),
               ),
             ],
@@ -191,10 +196,101 @@ class ProjectPage extends StatelessWidget {
             children: [
               Expanded(child: SizedBox()),
               MaterialButton(
+                minWidth: 70,
+                height: 70,
+                padding: EdgeInsets.all(0),
+                shape: CircleBorder(),
                 onPressed: () {},
-                child: Text(
-                  "Play market",
-                  style: MyStyle.bold.copyWith(color: MyColors.blue),
+                child: Icon(
+                  FontAwesomeIcons.googlePlay,
+                  color: MyColors.blue,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _widgetFlutter() {
+    return Container(
+      width: double.infinity,
+      color: MyColors.white,
+      padding: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Flowers Tashkent",
+            style: MyStyle.bold.copyWith(fontSize: 18),
+          ),
+          SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            height: 360,
+            child: PageView(
+              controller: _controller,
+              children: [
+                Image.asset("assets/img_fl1.jpg"),
+                Image.asset("assets/img_fl2.jpg"),
+                Image.asset("assets/img_fl3.jpg"),
+                Image.asset("assets/img_fl4.jpg"),
+                Image.asset("assets/img_fl5.jpg"),
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(child: SizedBox()),
+              MaterialButton(
+                minWidth: 70,
+                height: 70,
+                padding: EdgeInsets.all(0),
+                shape: CircleBorder(),
+                onPressed: () {},
+                child: Icon(
+                  FontAwesomeIcons.download,
+                  color: MyColors.blue,
+                ),
+              ),
+            ],
+          ),
+          Divider(height: 20),
+          Text(
+            "Ma'no",
+            style: MyStyle.bold.copyWith(fontSize: 18),
+          ),
+          SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            height: 360,
+            child: PageView(
+              controller: _controller,
+              children: [
+                Image.asset("assets/img_mn1.jpg"),
+                Image.asset("assets/img_mn2.jpg"),
+                Image.asset("assets/img_mn3.jpg"),
+                Image.asset("assets/img_mn4.jpg"),
+                Image.asset("assets/img_mn5.jpg"),
+                Image.asset("assets/img_mn6.jpg"),
+                Image.asset("assets/img_mn7.jpg"),
+                Image.asset("assets/img_mn8.jpg"),
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(child: SizedBox()),
+              MaterialButton(
+                minWidth: 70,
+                height: 70,
+                padding: EdgeInsets.all(0),
+                shape: CircleBorder(),
+                onPressed: () {},
+                child: Icon(
+                  FontAwesomeIcons.download,
+                  color: MyColors.blue,
                 ),
               ),
             ],

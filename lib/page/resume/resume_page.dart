@@ -1,25 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 import 'package:getx_resume_app/data/colors.dart';
 import 'package:getx_resume_app/data/style.dart';
+import 'package:getx_resume_app/page/resume/resume_model.dart';
+import 'package:getx_resume_app/page/main/main_controller.dart';
 
 class ResumePage extends StatelessWidget {
+  final MainController main = Get.find<MainController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.greyLight,
-      body: _body(),
+      body: Obx(() => _body()),
     );
   }
 
   Widget _body() {
-    return Center(
+    return SingleChildScrollView(
       child: Container(
-        width: 700,
-        height: double.infinity,
-        padding: EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
-        child: SingleChildScrollView(
+        width: double.infinity,
+        alignment: Alignment.topCenter,
+        child: SizedBox(
+          width: 700,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,7 +34,7 @@ class ResumePage extends StatelessWidget {
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(bottom: 10),
                 child: Text(
-                  "Ish tajriba",
+                  "${ResumeModel.title1(main.langIndex.value)}",
                   style: MyStyle.bold.copyWith(fontSize: 20),
                 ),
               ),
@@ -39,51 +44,59 @@ class ResumePage extends StatelessWidget {
                 child: Column(
                   children: [
                     _itemWork(
-                      duration: "Sentabr 2020\nhozir",
-                      firm: "TUNE Consulting",
-                      firmAbout: "Bank sohasi",
-                      firmSite: "tuneconsulting.net",
-                      profession: "Flutter dasturchi",
-                      description: """
-Buyerda android dasturchi bo'lib ishga kirganman, ishxona boshlanishida flutterni start up uchun ishlatishni ko'zlashgan, shu uchun test uchun kichikroq app qilib ko'rdik. Hozir shuni ustida ishlayapmiz.
-
-TUNE Consultingni qilgan mashhur ilovalari, Apelsin(Kapital bank), Joyda(SQB), Milliy(NBU), Ipak Yo'li Mobile(Ipak yo'li bank), InfinBank(Invest Finance bank) va boshqalar.   
-                      """,
+                      duration:
+                          "${ResumeModel.item1Duration(main.langIndex.value)}",
+                      firm: "${ResumeModel.item1Firm(main.langIndex.value)}",
+                      firmAbout:
+                          "${ResumeModel.item1About(main.langIndex.value)}",
+                      firmSite:
+                          "${ResumeModel.item1Site(main.langIndex.value)}",
+                      profession:
+                          "${ResumeModel.item1Pro(main.langIndex.value)}",
+                      description:
+                          "${ResumeModel.item1Desc(main.langIndex.value)}",
                     ),
                     Divider(height: 20),
                     _itemWork(
-                      duration: "Fevral 2020\nAvgust 2020",
-                      firm: "Qurilish vazirligi",
-                      firmAbout: "Qurilish sohasi",
-                      firmSite: "mc.uz",
-                      profession: "Android dasturchi",
-                      description: """
-Qurilish sohasidagi ishlarni qilganmiz, qurilishdagi ishlarni telefon orqali avtomizatsiya qiladigan, xujjatlarni qog'ozda emas, elektron sayt, mobile ilovalar orqali yuritishni qilganmiz. Boshida ish juda tez keta boshlagan, play marketga ilova chiqarilgandan so'ng sekinlashib qolgan, shu sababli boshqa ishga o'tganman.   
-                      """,
+                      duration:
+                          "${ResumeModel.item2Duration(main.langIndex.value)}",
+                      firm: "${ResumeModel.item2Firm(main.langIndex.value)}",
+                      firmAbout:
+                          "${ResumeModel.item2About(main.langIndex.value)}",
+                      firmSite:
+                          "${ResumeModel.item2Site(main.langIndex.value)}",
+                      profession:
+                          "${ResumeModel.item2Pro(main.langIndex.value)}",
+                      description:
+                          "${ResumeModel.item2Desc(main.langIndex.value)}",
                     ),
                     Divider(height: 20),
                     _itemWork(
-                      duration: "Sentabr 2018\nFevral 2020",
-                      firm: "Samarali Ta'lim",
-                      firmAbout: "Ta'lim sohasi",
-                      firmSite: "",
-                      profession: "Android, desktop dasturchi va o'qituvchi",
-                      description: """
-Samarali Ta'lim 1000 ga yaqin o'quvchisi bor, abituriyentlarni tayyorlovchi o'rtacha kattalikdagi o'quv markaz. Buyerda o'qituvchilar uchun, o'quvchilarni vazifalarini kompyuterda skaner orqali tekshirish, ota-onasiga sms yuborish, o'zlashtishni monitoring qiladigan ish qilingan. Shu bilan bir qatorda o'zim ham Fizika, Informatikadan dars o'tganman.   
-                      """,
+                      duration:
+                          "${ResumeModel.item3Duration(main.langIndex.value)}",
+                      firm: "${ResumeModel.item3Firm(main.langIndex.value)}",
+                      firmAbout:
+                          "${ResumeModel.item3About(main.langIndex.value)}",
+                      firmSite:
+                          "${ResumeModel.item3Site(main.langIndex.value)}",
+                      profession:
+                          "${ResumeModel.item3Pro(main.langIndex.value)}",
+                      description:
+                          "${ResumeModel.item3Desc(main.langIndex.value)}",
                     ),
                     Divider(height: 20),
                     _itemWork(
-                      duration: "Iyun 2018\nAvgust 2018",
-                      firm: "GreenWhite Solutions",
-                      firmAbout: "Biznes sohasi",
-                      firmSite: "greenwhite.uz",
-                      profession: "Amaliyotchi(android)",
-                      description: """
-Bizneslar uchun avtomatlashtiruvchi mobile, web ilovalar ishlab chiqishadi. Asosan savdo-sotiq, dorixona, qo'riqlash kameralari bo'yicha ixtisoslashgan.
-
-Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni misol qilib keltirish mumkin.      
-                      """,
+                      duration:
+                          "${ResumeModel.item4Duration(main.langIndex.value)}",
+                      firm: "${ResumeModel.item4Firm(main.langIndex.value)}",
+                      firmAbout:
+                          "${ResumeModel.item4About(main.langIndex.value)}",
+                      firmSite:
+                          "${ResumeModel.item4Site(main.langIndex.value)}",
+                      profession:
+                          "${ResumeModel.item4Pro(main.langIndex.value)}",
+                      description:
+                          "${ResumeModel.item4Desc(main.langIndex.value)}",
                     ),
                   ],
                 ),
@@ -94,7 +107,7 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
-                  "Bilim ko'nikmalar",
+                  "${ResumeModel.title2(main.langIndex.value)}",
                   style: MyStyle.bold.copyWith(fontSize: 20),
                 ),
               ),
@@ -193,8 +206,7 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Dasturlash yo'nalishlari",
-                //textAlign: TextAlign.end,
+                "${ResumeModel.titleProg(main.langIndex.value)}",
                 style: MyStyle.bold.copyWith(
                   fontSize: 16,
                   color: MyColors.blue,
@@ -304,7 +316,7 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Dasturlash texnalogiyalari",
+                "${ResumeModel.titleTec(main.langIndex.value)}",
                 style: MyStyle.bold.copyWith(
                   fontSize: 16,
                   color: MyColors.blue,
@@ -443,7 +455,7 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Chet tili",
+                "${ResumeModel.titleLang(main.langIndex.value)}",
                 style: MyStyle.bold.copyWith(
                   fontSize: 16,
                   color: MyColors.blue,
@@ -459,7 +471,11 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             children: [
               Row(
                 children: [
-                  Expanded(child: Text("Ingliz tili", style: MyStyle.bold)),
+                  Expanded(
+                      child: Text(
+                    "${ResumeModel.langEng(main.langIndex.value)}",
+                    style: MyStyle.bold,
+                  )),
                   RatingBar(
                     initialRating: 4,
                     allowHalfRating: true,
@@ -486,7 +502,11 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
               SizedBox(height: 4),
               Row(
                 children: [
-                  Expanded(child: Text("Rus tili", style: MyStyle.bold)),
+                  Expanded(
+                      child: Text(
+                    "${ResumeModel.langRu(main.langIndex.value)}",
+                    style: MyStyle.bold,
+                  )),
                   RatingBar(
                     initialRating: 2,
                     allowHalfRating: true,
@@ -526,7 +546,7 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Qo'shimcha",
+                "${ResumeModel.title3(main.langIndex.value)}",
                 style: MyStyle.bold.copyWith(
                   fontSize: 16,
                   color: MyColors.blue,
@@ -542,12 +562,12 @@ Taniqli mijozlaridan: Coca:Cola, Ums, Nestle, Samsung, Bayer, LiquiMoly larni mi
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Flutter bo'yicha bilimlarim",
+                "${ResumeModel.other1(main.langIndex.value)}",
                 style: MyStyle.bold.copyWith(fontSize: 18),
               ),
               SizedBox(height: 4),
               Text(
-                "Arxitektura: BLoC/Provider/GetX\nApi: RestApi/WebSocket/Firebase\nGit: GitHub/GitLab",
+                "${ResumeModel.other2(main.langIndex.value)}",
                 style: MyStyle.norm.copyWith(fontSize: 16),
               ),
             ],

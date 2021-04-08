@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:getx_resume_app/data/colors.dart';
+import 'package:getx_resume_app/page/about/about_model.dart';
 import 'package:getx_resume_app/data/style.dart';
+import 'package:getx_resume_app/page/main/main_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
+  final MainController main = Get.find<MainController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +110,8 @@ class AboutPage extends StatelessWidget {
                     minWidth: 50,
                     height: 50,
                     padding: EdgeInsets.all(0),
-                    onPressed: () {},
+                    onPressed: () => launch(
+                        "https://www.facebook.com/abbos.bobomurodov.2101"),
                     shape: CircleBorder(),
                     child: Icon(
                       FontAwesomeIcons.facebookF,
@@ -116,7 +122,7 @@ class AboutPage extends StatelessWidget {
                     minWidth: 50,
                     height: 50,
                     padding: EdgeInsets.all(0),
-                    onPressed: () {},
+                    onPressed: () => launch("https://t.me/abbos2101"),
                     shape: CircleBorder(),
                     child: Icon(
                       FontAwesomeIcons.telegramPlane,
@@ -127,7 +133,8 @@ class AboutPage extends StatelessWidget {
                     minWidth: 50,
                     height: 50,
                     padding: EdgeInsets.all(0),
-                    onPressed: () {},
+                    onPressed: () => launch(
+                        "https://www.linkedin.com/in/abbos-bobomurodov-986914201"),
                     shape: CircleBorder(),
                     child: Icon(
                       FontAwesomeIcons.linkedinIn,
@@ -138,7 +145,7 @@ class AboutPage extends StatelessWidget {
                     minWidth: 50,
                     height: 50,
                     padding: EdgeInsets.all(0),
-                    onPressed: () {},
+                    onPressed: () => launch("https://github.com/abbos2101"),
                     shape: CircleBorder(),
                     child: Icon(
                       FontAwesomeIcons.githubAlt,
@@ -170,32 +177,32 @@ class AboutPage extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(height: 20),
-            Text(
-              "ASSALOMU ALAYKUM",
-              style: MyStyle.bold.copyWith(fontSize: 22),
-            ),
-            SizedBox(height: 20),
-            Text(
-              """
-       O'zim haqimda qisqacha...                                                
+        child: Obx(() => Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  AboutModel.title(main.langIndex.value),
+                  style: MyStyle.bold.copyWith(fontSize: 22),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  """
+       ${AboutModel.description(main.langIndex.value)}                                                
               """,
-              style: MyStyle.bold.copyWith(fontSize: 18),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                """
-  Toshkent Axbarot Texnalogiyalari universitetida o'qiganman. Shu kungacha bir nechta o'quv markazlarga nazorat, monitoring dasturlari tuzganman, dars ham o'tganman, mentor qobilayatim bor, bazida frilansirlik ham qilib turaman.
+                  style: MyStyle.bold.copyWith(fontSize: 18),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    """
+  ${AboutModel.content(main.langIndex.value)}
                  """,
-                style: MyStyle.aref.copyWith(fontSize: 16),
-              ),
-            ),
-          ],
-        ),
+                    style: MyStyle.aref.copyWith(fontSize: 16),
+                  ),
+                ),
+              ],
+            )),
       ),
     );
   }
