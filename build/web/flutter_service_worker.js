@@ -3,7 +3,8 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "eb319ef7d56ec1fd249e962dcccd5ad5",
+  "assets/AssetManifest.json": "54b3cff01eea0a3e8c8bf9c39d9e4c8a",
+"assets/assets/flower(0.3.2).apk": "a4c44ac46d9c1b81aae4285ef7669998",
 "assets/assets/img_fl1.jpg": "ddade0ceff45b10e7f43b8cd91ee1a02",
 "assets/assets/img_fl2.jpg": "f18a8cb45da481fd937419cc4aabc397",
 "assets/assets/img_fl3.jpg": "0702ef8f695c32e31c0d2eddc1acd006",
@@ -29,6 +30,7 @@ const RESOURCES = {
 "assets/assets/img_sm5.webp": "97e93f9b5c47cb1b7a2d6ac65b2169f1",
 "assets/assets/img_sm6.webp": "1b2fe7cec128255ae28b174288acf453",
 "assets/assets/img_sm7.webp": "51f38c397329329cc4d8d1f5a23a656a",
+"assets/assets/mano(0.6.6).apk": "612ca8ea653a0c7147d539fa6a80d168",
 "assets/assets/video_smartup.mp4": "839326936a7af2c83a4568c261199f94",
 "assets/FontManifest.json": "5a32d4310a6f5d9a6b651e75ba0d7372",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
@@ -40,9 +42,9 @@ const RESOURCES = {
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "ab406d2f7e0206ef362c962fb0e58430",
-"/": "ab406d2f7e0206ef362c962fb0e58430",
-"main.dart.js": "8efa4d3ae440eda4074d352a3953cc51",
+"index.html": "8fd0b963650e4c3f70c6b221693cbfe3",
+"/": "8fd0b963650e4c3f70c6b221693cbfe3",
+"main.dart.js": "aec77bce9e0a46086c9ae63e599c1ec4",
 "manifest.json": "5d6f96b8f7e7f224552f27b2d138075d",
 "version.json": "e50bc60262cb9114be3bb5958f332a10"
 };
