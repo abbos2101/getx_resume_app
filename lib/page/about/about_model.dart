@@ -16,7 +16,7 @@ class AboutModel {
   }
 
   static String description(int lang) {
-    if (lang == 0) return "O'zim haqimda qisqacha ...";
+    if (lang == 0) return "O'zim haqimda ...";
     if (lang == 1) return "Коротко о себе ...";
     return "Briefly about myself ...";
   }
